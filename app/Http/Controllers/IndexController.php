@@ -39,7 +39,7 @@ class IndexController extends Controller
             'mobile_no'=>$mobile,
             'password'=>$password
         ]);
-        $student_data->save();
+        //$student_data->save();
 
         $data=['msg'=>'Success'];
         $user['to']=$email;
@@ -48,9 +48,6 @@ class IndexController extends Controller
             $message->subject('Registration Successfully!');
         });
 
-        echo "<script>
-        alert('You are Register Successfully');
-        window.location.href='../';
-        </script>";
+        echo "<script>alert('You are Register Successfully');window.location.href='../';</script>";
     }
 }
