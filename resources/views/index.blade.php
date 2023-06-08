@@ -9,7 +9,7 @@
             <div class="col-md-5 order-md-last">
                 <div class="login-wrap p-4 p-md-4">
                     <h3 class="mb-4">Register Now</h3>
-                    <form action="register-process" method="post" class="signup-form">
+                    <form action="register-process" method="post" class="signup-form" id="register_form">
                         @csrf
                         <div class="form-group">
                             <label class="label" for="name">Full Name</label>
@@ -24,7 +24,7 @@
 
                         <div class="form-group">
                             <label class="label" for="password">Mobile Number</label>
-                            <input  type="text" class="form-control" placeholder="Mobile No" name="mobile_no" id="mobile_no" value="{{old('mobile_no')}}">
+                            <input type="text" class="form-control" placeholder="Mobile No" name="mobile_no" id="mobile_no" value="{{old('mobile_no')}}">
                             @error('mobile_no')<small class="text-danger">{{$message}}</small>@enderror
                         </div>
                         <div class="form-group">
@@ -34,7 +34,7 @@
                         </div>
                         <div class="form-group">
                             <label class="label" for="password">Confirm Password</label>
-                            <input  type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" id="confirm_password">
+                            <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_password" id="confirm_password">
                             @error('confirm_password')<small class="text-danger">{{$message}}</small>@enderror
                         </div>
                         <div class="form-group d-flex justify-content-end mt-4 mb-3">
@@ -259,128 +259,139 @@
 </section>
 
 <section class="ftco-section testimony-section bg-light">
-   <div class="overlay" style="background-image: url(images/bg_2.jpg);"></div>
-   <div class="container">
-    <div class="row pb-4">
-      <div class="col-md-7 heading-section ftco-animate">
-         <span class="subheading">Testimonial</span>
-         <h2 class="mb-4">What Are Students Says</h2>
-     </div>
- </div>
-</div>
-<div class="container container-2">
-    <div class="row ftco-animate">
-      <div class="col-md-12">
-        <div class="carousel-testimony owl-carousel">
-          <div class="item">
-            <div class="testimony-wrap py-4">
-              <div class="text">
-                 <p class="star">
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </p>
-                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                <div class="d-flex align-items-center">
-                   <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-                   <div class="pl-3">
-                      <p class="name">Roger Scott</p>
-                      <span class="position">Marketing Manager</span>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="item">
-    <div class="testimony-wrap py-4">
-      <div class="text">
-         <p class="star">
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-        </p>
-        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        <div class="d-flex align-items-center">
-           <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-           <div class="pl-3">
-              <p class="name">Roger Scott</p>
-              <span class="position">Marketing Manager</span>
-          </div>
-      </div>
-  </div>
-</div>
-</div>
-<div class="item">
-    <div class="testimony-wrap py-4">
-      <div class="text">
-         <p class="star">
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-        </p>
-        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        <div class="d-flex align-items-center">
-           <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
-           <div class="pl-3">
-              <p class="name">Roger Scott</p>
-              <span class="position">Marketing Manager</span>
-          </div>
-      </div>
-  </div>
-</div>
-</div>
-<div class="item">
-    <div class="testimony-wrap py-4">
-      <div class="text">
-         <p class="star">
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-        </p>
-        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        <div class="d-flex align-items-center">
-           <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
-           <div class="pl-3">
-              <p class="name">Roger Scott</p>
-              <span class="position">Marketing Manager</span>
-          </div>
-      </div>
-  </div>
-</div>
-</div>
-<div class="item">
-    <div class="testimony-wrap py-4">
-      <div class="text">
-         <p class="star">
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-        </p>
-        <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-        <div class="d-flex align-items-center">
-           <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
-           <div class="pl-3">
-              <p class="name">Roger Scott</p>
-              <span class="position">Marketing Manager</span>
-          </div>
-      </div>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="overlay" style="background-image: url(images/bg_2.jpg);"></div>
+    <div class="container">
+        <div class="row pb-4">
+            <div class="col-md-7 heading-section ftco-animate">
+                <span class="subheading">Testimonial</span>
+                <h2 class="mb-4">What Are Students Says</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container container-2">
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel">
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="star">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="star">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="star">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="star">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="text">
+                                <p class="star">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </p>
+                                <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                                <div class="d-flex align-items-center">
+                                    <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Roger Scott</p>
+                                        <span class="position">Marketing Manager</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script>
+    jQuery('#register_form').validate({
+        rules:{
+            full_name: "required"
+        },
+        messages:{
+            full_name: "Full Name is Required"
+        }
+    });
+</script>
 
 @endsection
