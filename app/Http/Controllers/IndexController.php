@@ -29,25 +29,24 @@ class IndexController extends Controller
                 'confirm_password.required' => ' Confirm Password is required'
             ]
         );
-        $fullname=$request->get('full_name');
-        $email=$request->get('email_id');
-        $mobile=$request->get('mobile_no');
-        $password=$request->get('password');
-        $student_data=new tbl_student([
-            'full_name'=>$fullname,
-            'email_id'=>$email,
-            'mobile_no'=>$mobile,
-            'password'=>$password
+        $fullname = $request->get('full_name');
+        $email = $request->get('email_id');
+        $mobile = $request->get('mobile_no');
+        $password = $request->get('password');
+        $student_data = new tbl_student([
+            'full_name' => $fullname,
+            'email_id' => $email,
+            'mobile_no' => $mobile,
+            'password' => $password
         ]);
-        //$student_data->save();
-
-        $data=['msg'=>'Success'];
-        $user['to']=$email;
-        Mail::send('send-mail',$data,function($message) use ($user) {
-            $message->to($user['to']);
-            $message->subject('Registration Successfully!');
-        });
-
-        echo "<script>alert('You are Register Successfully');window.location.href='../';</script>";
+        if ($student_data->save()) {
+            $data = ['msg' => 'Success'];
+            $user['to'] = $email;
+            Mail::send('send-mail', $data, function ($message) use ($user) {
+                $message->to($user['to']);
+                $message->subject('Registration Successfully!');
+            });
+            echo "<script>alert('You are Register Successfully');window.location.href='../';</script>";
+        }
     }
 }
