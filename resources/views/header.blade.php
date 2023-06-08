@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{{$page_name}} - ENT MCQ</title>
+    <title>{{$page_name}} :: ENT MCQ</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
